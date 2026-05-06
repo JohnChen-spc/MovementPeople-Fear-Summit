@@ -13,7 +13,7 @@
   <!-- 引入Font Awesome增强视觉 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* 核心重置 & 基础变量 */
+    /* 原有样式保持不变，此处省略以节省篇幅 */
     :root {
       --primary-orange: #FF6A00;
       --primary-red: #FF4400;
@@ -1375,7 +1375,7 @@
       剩余时间：
       <div class="countdown-box" id="top-countdown">
         <div class="countdown-item">
-          <div class="countdown-number" id="top-days">10</div>
+          <div class="countdown-number" id="top-days">11</div>
           <div class="countdown-label">天</div>
         </div>
         <div class="countdown-item">
@@ -1438,6 +1438,7 @@
     </div>
   </div>
 
+  <!-- 页面内容部分保持不变 -->
   <!-- 1. 英雄区 - 核心价值主张 -->
   <section class="section section-hero">
     <div class="container-left animate-fade">
@@ -1617,11 +1618,11 @@
       <p class="testimonial-subtitle">这些人也曾和你一样被恐惧困住，直到他们做出了选择</p>
       
       <div class="grid-3">
-        <!-- 文字见证1 -->
+        <!-- 文字见证1 - 阿茂（修改后文案） -->
         <div class="testimonial-card">
           <p class="testimonial-quote">“</p>
           <p class="testimonial-text">
-            以前我总逃避，现在我敢面对自己最害怕的事。恐惧峰会让我第一次真正看清自己。
+            从一个想法到行动并没有想象中的远，通过BRP，我解锁了从未想过的成果，在正确的方向上变得更加自信。
           </p>
           <span class="testimonial-tag">直面恐惧 · 突破卡点</span>
           <p class="testimonial-name">
@@ -1629,11 +1630,11 @@
           </p>
         </div>
 
-        <!-- 文字见证2 -->
+        <!-- 文字见证2 - YY（修改后文案） -->
         <div class="testimonial-card">
           <p class="testimonial-quote">“</p>
           <p class="testimonial-text">
-            90分钟，我把压了我五年的恐惧写下来。那一刻，我轻松了。状态真的重置了。
+            在遇见 John 之前，我的身心状态被工作榨干了，John 总能引导我，让我在BRP的过程里重新认识自己的潜力，发现了我原来是可塑的，开始慢慢享受改变后的成就感。
           </p>
           <span class="testimonial-tag">释放压力 · 状态重启</span>
           <p class="testimonial-name">
@@ -1641,7 +1642,7 @@
           </p>
         </div>
 
-        <!-- 文字见证3 -->
+        <!-- 文字见证3 - 文博（保留原文案） -->
         <div class="testimonial-card">
           <p class="testimonial-quote">“</p>
           <p class="testimonial-text">
@@ -1837,11 +1838,32 @@
   </footer>
 
   <script>
-    // 10天倒计时功能
+    // 11天倒计时功能 - 修复刷新重置问题
     function startCountdown() {
-      // 设置倒计时结束时间（当前时间 + 10天）
-      const endDate = new Date();
-      endDate.setDate(endDate.getDate() + 10);
+      let endDate;
+      const STORAGE_KEY = 'countdown_end_time';
+      
+      // 尝试从localStorage读取结束时间
+      const storedEndTime = localStorage.getItem(STORAGE_KEY);
+      
+      if (storedEndTime) {
+        // 如果有存储的结束时间，使用它
+        endDate = new Date(parseInt(storedEndTime));
+        
+        // 检查存储的时间是否已经过期
+        const now = new Date();
+        if (endDate <= now) {
+          // 如果过期了，重新计算11天后的时间
+          endDate = new Date();
+          endDate.setDate(endDate.getDate() + 11);
+          localStorage.setItem(STORAGE_KEY, endDate.getTime().toString());
+        }
+      } else {
+        // 首次访问，计算11天后的结束时间并存储
+        endDate = new Date();
+        endDate.setDate(endDate.getDate() + 11);
+        localStorage.setItem(STORAGE_KEY, endDate.getTime().toString());
+      }
       
       // 更新倒计时函数
       function updateCountdown() {
@@ -1868,6 +1890,8 @@
         // 如果倒计时结束
         if (diff <= 0) {
           clearInterval(timer);
+          // 清空存储的结束时间
+          localStorage.removeItem(STORAGE_KEY);
           // 更新显示内容
           document.querySelectorAll('.countdown-number').forEach(el => {
             el.textContent = '00';
@@ -1888,7 +1912,7 @@
     // 页面加载时启动倒计时
     let countdownTimer;
     document.addEventListener('DOMContentLoaded', function() {
-      // 启动10天倒计时
+      // 启动11天倒计时（带本地存储）
       countdownTimer = startCountdown();
       
       // 退出弹窗触发（桌面+移动端）
