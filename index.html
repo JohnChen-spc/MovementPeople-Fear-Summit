@@ -1761,55 +1761,38 @@
   </footer>
 
   <script>
-    // 11天倒计时 · 永久本地存储，不重置
+    // 永久倒计时：5月8日 ~ 5月16日 23:59:59 绝对无法重置
     function startCountdown() {
-      let endDate;
-      const STORAGE_KEY = 'countdown_end_time';
-      
-      const storedEndTime = localStorage.getItem(STORAGE_KEY);
-      
-      if (storedEndTime) {
-        endDate = new Date(parseInt(storedEndTime));
-        const now = new Date();
-        if (endDate <= now) {
-          endDate = new Date();
-          endDate.setDate(endDate.getDate() + 11);
-          localStorage.setItem(STORAGE_KEY, endDate.getTime().toString());
-        }
-      } else {
-        endDate = new Date();
-        endDate.setDate(endDate.getDate() + 11);
-        localStorage.setItem(STORAGE_KEY, endDate.getTime().toString());
-      }
-      
+      const now = new Date();
+      const endDate = new Date(now.getFullYear(), 4, 16, 23, 59, 59);
+
       function updateCountdown() {
-        const now = new Date();
-        const diff = endDate - now;
-        
+        const currentTime = new Date();
+        const diff = endDate - currentTime;
+
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        
+
         const formatNumber = (num) => num.toString().padStart(2, '0');
-        
+
         if (document.getElementById('top-days')) {
-          document.getElementById('top-days').textContent = days;
-          document.getElementById('top-hours').textContent = formatNumber(hours);
-          document.getElementById('top-minutes').textContent = formatNumber(minutes);
-          document.getElementById('top-seconds').textContent = formatNumber(seconds);
+          document.getElementById('top-days').textContent = Math.max(0, days);
+          document.getElementById('top-hours').textContent = formatNumber(Math.max(0, hours));
+          document.getElementById('top-minutes').textContent = formatNumber(Math.max(0, minutes));
+          document.getElementById('top-seconds').textContent = formatNumber(Math.max(0, seconds));
         }
-        
+
         if (diff <= 0) {
           clearInterval(timer);
-          localStorage.removeItem(STORAGE_KEY);
           document.querySelectorAll('.countdown-number').forEach(el => {
             el.textContent = '00';
           });
           document.querySelector('.top-countdown .urgency-badge').textContent = '报名通道已关闭';
         }
       }
-      
+
       updateCountdown();
       const timer = setInterval(updateCountdown, 1000);
       return timer;
