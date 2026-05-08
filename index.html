@@ -13,7 +13,6 @@
   <!-- 引入Font Awesome增强视觉 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* 原有样式保持不变，此处省略以节省篇幅 */
     :root {
       --primary-orange: #FF6A00;
       --primary-red: #FF4400;
@@ -47,10 +46,9 @@
       -webkit-overflow-scrolling: touch;
       overflow-x: hidden;
       scroll-behavior: smooth;
-      padding-top: 70px; /* 移动端顶部留白 */
+      padding-top: 70px;
     }
 
-    /* 顶部悬浮倒计时 - 基础样式 */
     .top-countdown {
       position: fixed;
       top: 0;
@@ -88,7 +86,6 @@
       font-size: 14px;
     }
 
-    /* 核心布局 - 基础样式（移动端优先） */
     .section {
       padding: clamp(20px, 8vw, 60px) 8px;
       position: relative;
@@ -122,7 +119,6 @@
     .container { text-align: center; }
     .container-left { text-align: left; }
 
-    /* 视觉分隔符 */
     .divider {
       width: 60px;
       height: 3px;
@@ -138,7 +134,6 @@
       margin: 15px auto;
     }
 
-    /* 标题系统 - 移动端优先 */
     .hero-title {
       font-size: clamp(24px, 10vw, 48px);
       font-weight: 900;
@@ -184,7 +179,6 @@
       line-height: 1.7;
     }
 
-    /* 高亮文本 */
     .orange { color: var(--primary-orange); }
     .red { color: var(--primary-red); }
     
@@ -218,7 +212,6 @@
       font-weight: 400;
     }
 
-    /* 橙色信任框 */
     .orange-box {
       border: 2px solid var(--primary-orange);
       padding: clamp(15px, 4vw, 20px);
@@ -252,7 +245,6 @@
       border-color: #FF7A18;
     }
 
-    /* 表格/列表 */
     .grid-table {
       width: 100%;
       margin: clamp(15px, 4vw, 20px) 0;
@@ -302,7 +294,6 @@
       font-size: clamp(13px, 3vw, 14px);
     }
 
-    /* 恐惧清单 */
     .fear-list-section {
       position: relative;
       overflow: hidden;
@@ -359,7 +350,6 @@
       text-shadow: 0 0 20px rgba(255,106,0,0.2);
     }
 
-    /* 三列布局（移动端单列） */
     .grid-3 {
       display: grid;
       grid-template-columns: 1fr;
@@ -367,7 +357,6 @@
       margin: clamp(15px, 4vw, 25px) 0;
     }
     
-    /* 恐惧峰会核心区 */
     .fear-section {
       background: linear-gradient(135deg, #111 0%, var(--darker-bg) 50%, #111 100%);
       background-size: cover;
@@ -400,7 +389,6 @@
       text-shadow: 0 0 25px rgba(255,106,0,0.3);
     }
     
-    /* 峰会核心价值列表 */
     .fear-value-list {
       max-width: 100%;
       margin: 20px auto;
@@ -476,7 +464,6 @@
       margin-right: auto;
     }
 
-    /* 按钮样式 */
     .btn-group {
       display: flex;
       justify-content: center;
@@ -551,7 +538,6 @@
       box-shadow: 0 8px 25px rgba(255,106,0,0.2);
     }
 
-    /* 紧迫感标签 */
     .urgency-badge {
       display: inline-block;
       background: linear-gradient(135deg, #FF3300, #FF6600);
@@ -578,7 +564,6 @@
       margin: 10px 0;
     }
     
-    /* 倒计时样式 */
     .countdown-container {
       font-size: clamp(14px, 4vw, 16px);
       color: white;
@@ -615,7 +600,6 @@
       color: var(--text-light-gray);
     }
 
-    /* 悬浮按钮 */
     .float-btn {
       position: fixed;
       bottom: 15px;
@@ -644,7 +628,6 @@
       box-shadow: 0 10px 25px rgba(255,106,0,0.5);
     }
 
-    /* 退出弹窗 */
     .exit-modal {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -711,12 +694,11 @@
     
     .close-exit:hover { color: var(--primary-orange); }
 
-    /* 二维码弹窗样式 */
     .qrcode-modal {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0,0,0,0.95);
-      z-index: 99999; /* 层级高于退出弹窗 */
+      z-index: 99999;
       display: none;
       align-items: center;
       justify-content: center;
@@ -780,14 +762,12 @@
 
     .close-qrcode:hover { color: var(--primary-orange); }
 
-    /* 适配桌面端 */
     @media (min-width: 768px) {
       .qrcode-box {
         padding: 40px;
       }
     }
 
-    /* FAQ */
     .faq-container {
       max-width: 100%;
       margin: 0 auto;
@@ -837,7 +817,6 @@
       padding: 0 5px;
     }
 
-    /* 客户见证 */
     .testimonial-header {
       display: flex;
       align-items: center;
@@ -922,7 +901,6 @@
     
     .testimonial-name i { font-size: 12px; }
     
-    /* 图片/视频见证 */
     .testimonial-img-card, .testimonial-video-card {
       grid-column: 1 / -1;
       background: linear-gradient(180deg, #222 0%, #1e1e1e 100%);
@@ -988,7 +966,6 @@
       margin-top: 15px;
     }
 
-    /* 痛点对比 */
     .pain-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -1027,7 +1004,6 @@
       font-size: 12px;
     }
 
-    /* 创始人故事 */
     .founder-story {
       background: linear-gradient(135deg, rgba(26,26,26,0.8) 0%, rgba(20,20,20,0.8) 100%);
       border-radius: 12px;
@@ -1075,7 +1051,6 @@
       border-left: 3px solid var(--primary-orange);
     }
 
-    /* 页脚 */
     footer {
       background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
       padding: clamp(30px, 8vw, 50px) 8px 20px;
@@ -1144,21 +1119,13 @@
       font-size: 11px;
     }
 
-    /* ========================
-       响应式优化 - 平板 (480px+)
-       ======================== */
     @media (min-width: 480px) and (max-width: 767px) {
       .testimonial-video-wrapper { min-height: 180px; }
       .pain-grid { grid-template-columns: 1fr 1fr; }
       .fear-value-list { max-width: 90%; }
     }
 
-    /* ========================
-       响应式优化 - 桌面端 (768px+)
-       重点修复：布局、间距、排版、交互
-       ======================== */
     @media (min-width: 768px) {
-      /* 基础布局调整 */
       body { padding-top: 80px; }
       
       .section-hero {
@@ -1171,22 +1138,19 @@
       }
       
       .container, .container-left {
-        max-width: 1200px;  /* 增大桌面端最大宽度 */
+        max-width: 1200px;
         padding: 0 20px;
       }
       
-      /* 英雄区优化 - 桌面端居中偏左 */
       .hero-content {
         padding-top: 50px;
-        max-width: 800px;  /* 限制内容宽度，避免过宽 */
+        max-width: 800px;
         margin: 0 auto 0 0;
       }
       
-      /* 多列布局激活 */
       .grid-3 { grid-template-columns: repeat(3, 1fr); }
       .pain-grid { grid-template-columns: repeat(3, 1fr); }
       
-      /* 表格布局优化 */
       .grid-table .row {
         flex-direction: row;
         align-items: center;
@@ -1201,7 +1165,6 @@
         width: 60%;
       }
       
-      /* 视频见证双列布局 */
       .video-testimonial-grid {
         grid-template-columns: 1fr 1fr;
         gap: 25px;
@@ -1209,17 +1172,15 @@
       
       .testimonial-video-wrapper {
         max-width: 800px;
-        min-height: 280px;  /* 增大桌面端视频高度 */
+        min-height: 280px;
       }
       
-      /* 恐惧清单优化 - 桌面端更宽 */
       .fear-list-section::after { width: 40%; }
       .fear-item {
         max-width: 900px;
-        margin: 15px auto;  /* 居中显示 */
+        margin: 15px auto;
       }
       
-      /* 峰会核心价值列表 - 桌面端居中 */
       .fear-value-list {
         max-width: 800px;
         margin: 30px auto;
@@ -1231,10 +1192,9 @@
         max-width: 800px;
       }
       
-      /* 顶部倒计时优化 */
       .top-countdown {
         padding: 12px 20px;
-        flex-wrap: nowrap;  /* 禁止换行 */
+        flex-wrap: nowrap;
       }
       
       .top-countdown .urgency-badge {
@@ -1254,26 +1214,22 @@
         font-size: 20px;
       }
       
-      /* 退出弹窗优化 - 桌面端更小更居中 */
       .exit-box {
         max-width: 600px;
         width: 100%;
         padding: 40px;
       }
       
-      /* FAQ优化 - 桌面端限制宽度 */
       .faq-container {
         max-width: 800px;
       }
       
-      /* 创始人故事优化 */
       .founder-story {
         max-width: 900px;
         margin: 30px auto;
         padding: 40px;
       }
       
-      /* 按钮优化 - 桌面端更大 */
       .btn {
         font-size: 18px;
         padding: 16px 35px;
@@ -1287,7 +1243,6 @@
         min-height: 55px;
       }
       
-      /* 悬浮按钮 - 桌面端稍大 */
       .float-btn {
         width: 70px;
         height: 70px;
@@ -1296,7 +1251,6 @@
         right: 25px;
       }
       
-      /* 客户见证优化 */
       .testimonial-card {
         padding: 25px;
       }
@@ -1306,7 +1260,6 @@
         margin-top: 25px;
       }
       
-      /* 页脚优化 */
       footer {
         padding: 60px 20px 30px;
       }
@@ -1327,9 +1280,6 @@
       }
     }
 
-    /* ========================
-       超大屏优化 (1200px+)
-       ======================== */
     @media (min-width: 1200px) {
       .hero-title { font-size: 56px; }
       .heading { font-size: 42px; }
@@ -1340,14 +1290,12 @@
       }
     }
 
-    /* iOS 兼容性修复 */
     @supports (-webkit-overflow-scrolling: touch) {
       body { overflow-x: hidden; }
       .exit-modal { -webkit-overflow-scrolling: touch; }
       .qrcode-modal { -webkit-overflow-scrolling: touch; }
     }
     
-    /* 加载动画 */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -1366,7 +1314,6 @@
 </head>
 
 <body>
-  <!-- 顶部悬浮倒计时 -->
   <div class="top-countdown">
     <div class="urgency-badge">
       <i class="fas fa-hourglass-half"></i> 报名通道即将关闭
@@ -1394,12 +1341,10 @@
     </div>
   </div>
 
-  <!-- 悬浮CTA按钮 -->
   <div class="float-btn" ontouchstart="" onclick="showQrcode()">
     申请<br>峰会
   </div>
 
-  <!-- 退出挽回弹窗 -->
   <div class="exit-modal" id="exitModal">
     <div class="exit-box">
       <div class="exit-title">先别走。</div>
@@ -1419,7 +1364,6 @@
     </div>
   </div>
 
-  <!-- 二维码弹窗 -->
   <div class="qrcode-modal" id="qrcodeModal">
     <div class="qrcode-box">
       <div class="qrcode-title">扫码加我</div>
@@ -1438,8 +1382,6 @@
     </div>
   </div>
 
-  <!-- 页面内容部分保持不变 -->
-  <!-- 1. 英雄区 - 核心价值主张 -->
   <section class="section section-hero">
     <div class="container-left animate-fade">
       <div class="hero-content">
@@ -1471,7 +1413,6 @@
     </div>
   </section>
 
-  <!-- 2. 因为恐惧，你没做什么 -->
   <section id="truth" class="section section-dark animate-fade delay-1 fear-list-section">
     <div class="container">
       <h2 class="heading red">因为恐惧，你没做什么？</h2>
@@ -1517,14 +1458,12 @@
     </div>
   </section>
 
-  <!-- 3. 恐惧峰会 - 核心转化区 -->
   <section id="fear" class="fear-section animate-fade delay-1">
     <div class="container">
       <h2 class="fear-title">恐惧峰会：状态重置</h2>
       <p class="subhead">免费参与 · 但有一个硬性条件</p>
       <p class="fear-text">写下你的恐惧。不敢面对的人，禁止入场。</p>
       
-      <!-- 峰会核心价值列表 -->
       <div class="fear-value-list">
         <div class="fear-value-item">
           <div class="icon"><i class="fas fa-search"></i></div>
@@ -1555,7 +1494,6 @@
         <i class="fas fa-clock"></i> 90分钟 · 线上强袭
       </div>
       
-      <!-- 转化按钮 -->
       <a href="javascript:void(0)" class="btn btn-hero" onclick="showQrcode()" ontouchstart="" style="font-size:clamp(18px, 5vw, 22px); padding:18px 45px;">
         <i class="fas fa-paper-plane"></i> 立即锁定报名资格
       </a>
@@ -1570,7 +1508,6 @@
     </div>
   </section>
 
-  <!-- 7. 创始人故事 -->
   <section id="about" class="section animate-fade delay-1">
     <div class="container">
       <h2 class="heading">我带你走出来。</h2>
@@ -1611,38 +1548,38 @@
     </div>
   </section>
 
-  <!-- 4. 客户见证 -->
   <section class="section animate-fade delay-1">
     <div class="container">
       <h2 class="testimonial-main-title">见证 —— 有人走过了</h2>
       <p class="testimonial-subtitle">这些人也曾和你一样被恐惧困住，直到他们做出了选择</p>
       
       <div class="grid-3">
-        <!-- 文字见证1 - 阿茂（修改后文案） -->
         <div class="testimonial-card">
           <p class="testimonial-quote">“</p>
           <p class="testimonial-text">
-            从一个想法到行动并没有想象中的远，通过BRP，我解锁了从未想过的成果，在正确的方向上变得更加自信。
+            从一个想法到行动并没有想象中的远，<br>
+            通过BRP，我解锁了从未想过的成果，<br>
+            在正确的方向上变得更加自信。
           </p>
-          <span class="testimonial-tag">直面恐惧 · 突破卡点</span>
+          <span class="testimonial-tag">BRP突破 · 行动成果</span>
           <p class="testimonial-name">
             <i class="fas fa-user"></i> 阿茂
           </p>
         </div>
 
-        <!-- 文字见证2 - YY（修改后文案） -->
         <div class="testimonial-card">
           <p class="testimonial-quote">“</p>
           <p class="testimonial-text">
-            在遇见 John 之前，我的身心状态被工作榨干了，John 总能引导我，让我在BRP的过程里重新认识自己的潜力，发现了我原来是可塑的，开始慢慢享受改变后的成就感。
+            在遇见 John 之前，我的身心状态被工作榨干了，<br>
+            John 总能引导我，让我在BRP的过程里重新认识自己的潜力，<br>
+            发现了我原来是可塑的，开始慢慢享受改变后的成就感。
           </p>
-          <span class="testimonial-tag">释放压力 · 状态重启</span>
+          <span class="testimonial-tag">身心修复 · 潜力觉醒</span>
           <p class="testimonial-name">
             <i class="fas fa-user"></i> yy
           </p>
         </div>
 
-        <!-- 文字见证3 - 文博（保留原文案） -->
         <div class="testimonial-card">
           <p class="testimonial-quote">“</p>
           <p class="testimonial-text">
@@ -1655,9 +1592,7 @@
         </div>
       </div>
 
-      <!-- 视频见证区域 -->
       <div class="video-testimonial-grid">
-        <!-- 第一个视频见证 - ee -->
         <div class="testimonial-video-card">
           <p class="testimonial-quote">“</p>
           <p class="testimonial-text" style="font-size:clamp(14px, 3.5vw, 16px);">
@@ -1672,7 +1607,6 @@
           </p>
         </div>
 
-        <!-- 第二个视频见证 - 阿乐 -->
         <div class="testimonial-video-card">
           <p class="testimonial-quote">“</p>
           <p class="testimonial-text" style="font-size:clamp(14px, 3.5vw, 16px);">
@@ -1688,7 +1622,6 @@
         </div>
       </div>
 
-      <!-- Jaden图片见证 -->
       <div class="testimonial-img-card">
         <p class="testimonial-quote">“</p>
         <p class="testimonial-text" style="font-size:clamp(14px, 3.5vw, 16px);">
@@ -1703,7 +1636,6 @@
         </p>
       </div>
       
-      <!-- 见证区转化按钮 -->
       <div class="btn-group" style="margin-top:40px;">
         <a href="javascript:void(0)" class="btn btn-hero" onclick="showQrcode()" ontouchstart="">
           <i class="fas fa-arrow-right"></i> 走他们走过的路，突破恐惧
@@ -1712,7 +1644,6 @@
     </div>
   </section>
 
-  <!-- 5. 痛点对比 -->
   <section class="section section-dark animate-fade delay-1">
     <div class="container">
       <h2 class="heading red">如果你继续逃避——</h2>
@@ -1754,7 +1685,6 @@
     </div>
   </section>
 
-  <!-- 6. FAQ -->
   <section class="section animate-fade delay-1">
     <div class="container">
       <h2 class="heading">你还在犹豫什么？</h2>
@@ -1794,13 +1724,11 @@
     </div>
   </section>
 
-  <!-- 8. 最终行动召唤 -->
   <section class="section section-dark animate-fade delay-1">
     <div class="container">
       <h2 class="heading">你还在等什么？</h2>
       <p class="subhead">恐惧不会自己消失，除非你直面它。</p>
       
-      <!-- 转化按钮 -->
       <div class="btn-group">
         <a href="javascript:void(0)" class="btn btn-hero" onclick="showQrcode()" ontouchstart="">
           <i class="fas fa-bullseye"></i> 立即锁定报名资格
@@ -1814,7 +1742,6 @@
     </div>
   </section>
 
-  <!-- 页脚 -->
   <footer class="animate-fade delay-1">
     <div class="container">
       <div class="footer-logo">MOVEMENT PEOPLE</div>
@@ -1838,48 +1765,38 @@
   </footer>
 
   <script>
-    // 11天倒计时功能 - 修复刷新重置问题
+    // 11天倒计时 · 永久本地存储，不重置
     function startCountdown() {
       let endDate;
       const STORAGE_KEY = 'countdown_end_time';
       
-      // 尝试从localStorage读取结束时间
       const storedEndTime = localStorage.getItem(STORAGE_KEY);
       
       if (storedEndTime) {
-        // 如果有存储的结束时间，使用它
         endDate = new Date(parseInt(storedEndTime));
-        
-        // 检查存储的时间是否已经过期
         const now = new Date();
         if (endDate <= now) {
-          // 如果过期了，重新计算11天后的时间
           endDate = new Date();
           endDate.setDate(endDate.getDate() + 11);
           localStorage.setItem(STORAGE_KEY, endDate.getTime().toString());
         }
       } else {
-        // 首次访问，计算11天后的结束时间并存储
         endDate = new Date();
         endDate.setDate(endDate.getDate() + 11);
         localStorage.setItem(STORAGE_KEY, endDate.getTime().toString());
       }
       
-      // 更新倒计时函数
       function updateCountdown() {
         const now = new Date();
         const diff = endDate - now;
         
-        // 计算天、时、分、秒
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
         
-        // 格式化数字（确保两位数）
         const formatNumber = (num) => num.toString().padStart(2, '0');
         
-        // 更新顶部悬浮倒计时
         if (document.getElementById('top-days')) {
           document.getElementById('top-days').textContent = days;
           document.getElementById('top-hours').textContent = formatNumber(hours);
@@ -1887,12 +1804,9 @@
           document.getElementById('top-seconds').textContent = formatNumber(seconds);
         }
         
-        // 如果倒计时结束
         if (diff <= 0) {
           clearInterval(timer);
-          // 清空存储的结束时间
           localStorage.removeItem(STORAGE_KEY);
-          // 更新显示内容
           document.querySelectorAll('.countdown-number').forEach(el => {
             el.textContent = '00';
           });
@@ -1900,22 +1814,15 @@
         }
       }
       
-      // 立即更新一次
       updateCountdown();
-      
-      // 每秒更新一次
       const timer = setInterval(updateCountdown, 1000);
-      
       return timer;
     }
     
-    // 页面加载时启动倒计时
     let countdownTimer;
     document.addEventListener('DOMContentLoaded', function() {
-      // 启动11天倒计时（带本地存储）
       countdownTimer = startCountdown();
       
-      // 退出弹窗触发（桌面+移动端）
       document.addEventListener('mouseleave', function(e) {
         if (e.clientY < 20) {
           document.getElementById('exitModal').classList.add('show');
@@ -1934,44 +1841,34 @@
         }
       });
 
-      // 关闭退出弹窗
       window.closeExit = function() {
         document.getElementById('exitModal').classList.remove('show');
       }
 
-      // 显示二维码弹窗
       window.showQrcode = function() {
-        // 先关闭退出弹窗（如果打开）
         document.getElementById('exitModal').classList.remove('show');
-        // 显示二维码弹窗
         document.getElementById('qrcodeModal').classList.add('show');
       }
 
-      // 关闭二维码弹窗
       window.closeQrcode = function() {
         document.getElementById('qrcodeModal').classList.remove('show');
       }
 
-      // 修复二维码弹窗滚动穿透
       document.getElementById('qrcodeModal').addEventListener('touchmove', function(e) {
         e.preventDefault();
       }, { passive: false });
 
-      // FAQ 展开/收起
       document.querySelectorAll('.faq-question').forEach(item => {
-        // 点击事件
         item.addEventListener('click', () => {
           toggleFaq(item);
         });
         
-        // 移动端触摸事件
         item.addEventListener('touchend', (e) => {
           e.preventDefault();
           toggleFaq(item);
         });
       });
       
-      // FAQ 切换函数
       function toggleFaq(item) {
         const answer = item.nextElementSibling;
         item.classList.toggle('active');
@@ -1982,7 +1879,6 @@
         }
       }
       
-      // 平滑滚动优化
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
@@ -1991,7 +1887,6 @@
           
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
-            // 根据屏幕宽度调整偏移量
             const offsetTop = window.innerWidth >= 768 ? 80 : 70;
             window.scrollTo({
               top: targetElement.offsetTop - offsetTop,
@@ -2001,17 +1896,14 @@
         });
       });
       
-      // 防止iOS双击缩放
       document.addEventListener('dblclick', function(e) {
         e.preventDefault();
       }, { passive: false });
       
-      // 修复移动端弹窗滚动穿透
       document.getElementById('exitModal').addEventListener('touchmove', function(e) {
         e.preventDefault();
       }, { passive: false });
       
-      // 页面滚动动画
       const animateOnScroll = () => {
         const elements = document.querySelectorAll('.animate-fade');
         elements.forEach(el => {
@@ -2025,10 +1917,9 @@
       };
       
       window.addEventListener('scroll', animateOnScroll);
-      animateOnScroll(); // 初始加载执行
+      animateOnScroll();
     });
     
-    // 页面卸载时清除定时器
     window.addEventListener('beforeunload', function() {
       if (countdownTimer) {
         clearInterval(countdownTimer);
