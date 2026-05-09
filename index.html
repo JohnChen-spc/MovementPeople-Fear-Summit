@@ -737,12 +737,19 @@
       margin-bottom: 20px;
     }
 
-    .qrcode-image {
-      margin: 20px 0;
-      padding: 10px;
-      background: #fff;
-      border-radius: 8px;
+    /* 微信号展示样式 */
+    .wechat-id {
+      font-size: clamp(20px, 6vw, 28px);
+      font-weight: 900;
+      color: var(--primary-orange);
+      padding: 16px 20px;
+      border: 2px dashed var(--primary-orange);
+      border-radius: 12px;
       display: inline-block;
+      margin: 20px 0;
+      background: rgba(255,106,0,0.08);
+      user-select: all;
+      -webkit-user-select: all;
     }
 
     .qrcode-note {
@@ -822,7 +829,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      margin-bottom: 8px;
+      the: ;
     }
     
     .testimonial-header i {
@@ -1364,13 +1371,15 @@
     </div>
   </div>
 
+  <!-- 已替换为微信号的弹窗 -->
   <div class="qrcode-modal" id="qrcodeModal">
     <div class="qrcode-box">
-      <div class="qrcode-title">扫码加我</div>
+      <div class="qrcode-title">添加微信报名</div>
       <div class="qrcode-desc">备注「直面恐惧」</div>
-      <div class="qrcode-image">
-        <a href="https://imgchr.com/i/peq4FDU"><img src="https://s41.ax1x.com/2026/05/08/peq4FDU.jpg" alt="peq4FDU.jpg" border="0" style="width: 100%; max-width: 300px; border-radius: 8px;"></a>
-      </div>
+      
+      <!-- 你的微信号 -->
+      <div class="wechat-id">PCoach_John</div>
+      
       <div class="qrcode-note">
         不敢写下恐惧、不敢面对的人，别加
       </div>
@@ -1761,10 +1770,9 @@
   </footer>
 
   <script>
-    // 永久倒计时：5月8日 ~ 5月16日 23:59:59 绝对无法重置
+    // 🔥 永久固定倒计时：2026年5月16日 23:59:59 绝对无法重置
     function startCountdown() {
-      const now = new Date();
-      const endDate = new Date(now.getFullYear(), 4, 16, 23, 59, 59);
+      const endDate = new Date(2026, 4, 16, 23, 59, 59);
 
       function updateCountdown() {
         const currentTime = new Date();
@@ -1790,6 +1798,7 @@
             el.textContent = '00';
           });
           document.querySelector('.top-countdown .urgency-badge').textContent = '报名通道已关闭';
+          document.querySelector('.top-countdown .urgency-badge').style.background = '#666';
         }
       }
 
@@ -1797,7 +1806,7 @@
       const timer = setInterval(updateCountdown, 1000);
       return timer;
     }
-    
+
     let countdownTimer;
     document.addEventListener('DOMContentLoaded', function() {
       countdownTimer = startCountdown();
@@ -1898,7 +1907,7 @@
       window.addEventListener('scroll', animateOnScroll);
       animateOnScroll();
     });
-    
+
     window.addEventListener('beforeunload', function() {
       if (countdownTimer) {
         clearInterval(countdownTimer);
